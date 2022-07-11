@@ -1,37 +1,93 @@
-## Welcome to GitHub Pages
+# Coles Object Set
+## Welcome to the Coles Supermarket Object Dataset
 
-You can use the [editor on GitHub](https://github.com/lachlanchumbley/ColesObjectSet/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<div style="min-width: 400px; text-align: center; margin-left: auto; margin-right: auto;">
+  <img src="{{ site.baseurl }}/images/photos/All Objects.jpeg" alt="image" width="80%"/>
+</div>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The dataset consists of 3D water-tight mesh models of 50 supermarket objects.
 
-### Markdown
+You can download the dataset [**HERE**](https://bridges.monash.edu/articles/dataset/Supermarket_Object_Dataset/20179550).
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The object and model set was created to facilitate benchmarking of computer vision and robotics applications. You can find the Robotic Grasping Dataset that uses a subset of this object set [**HERE**](https://lachlanchumbley.github.io/RealGraspingDataset/).
 
-```markdown
-Syntax highlighted code block
+## The Objects
 
-# Header 1
-## Header 2
-### Header 3
+The objects were picked from 10 different categories:
+- Small Box (Food)
+- Large Box (Food)
+- Regular Cylinder (Food)
+- Irregular Cylinder (Food)
+- Small Box
+- Large Box
+- Regular Cylinder
+- Irregular Cylinder
+- Packet
+- Irregular Shapes
 
-- Bulleted
-- List
+<div float="left" style="display: flex; flex-direction: row; flex-wrap: wrap;">
+  {% for image in site.static_files %}
+      {% if image.path contains 'categories' %}
+        {% if image.path contains '.JPG' %}
+            {% assign pathsplit = image.path | split: "/" %}
+            {% assign length = pathParts.size | minus: 1 %}
+            {% assign filesplit = pathsplit[length] | split: "." %}
+            <!-- ten percent for ten per row?? -->
+            <div style="width: 10%; min-width: 150px; text-align: center; font-size: 60%; margin-left: auto; margin-right: auto;">
+              <!-- <strong>Object Name:</strong> {{ filesplit[0] }}  -->
+              <div> {{ filesplit[0] }} </div>
+              <img src="{{ site.baseurl }}{{ image.path }}" alt="image" width="80%"/>
+            </div>
+        {% endif %}
+      {% endif %}
+  {% endfor %}
+</div>
 
-1. Numbered
-2. List
+## The Models
+The models are 3D watertight meshes and are stored as .ply files.
+<div float="left" style="display: flex; flex-direction: row; flex-wrap: wrap;">
+  {% for image in site.static_files %}
+      {% if image.path contains 'gifs' %}
+        {% if image.path contains '.gif' %}
+            {% assign pathsplit = image.path | split: "/" %}
+            {% assign length = pathParts.size | minus: 1 %}
+            {% assign filesplit = pathsplit[length] | split: "." %}
+            <!-- ten percent for ten per row?? -->
+            <div style="width: 30%; min-width: 200px; text-align: center; margin-left: auto; margin-right: auto;">
+              <img src="{{ site.baseurl }}{{ image.path }}" alt="image" width="80%"/>
+            </div>
+        {% endif %}
+      {% endif %}
+  {% endfor %}
+</div>
 
-**Bold** and _Italic_ and `Code` text
+Here are all the objects in the dataset:
 
-[Link](url) and ![Image](src)
-```
+<div float="left" style="display: flex; flex-direction: row; flex-wrap: wrap;">
+  {% for image in site.static_files %}
+      {% if image.path contains 'models' %}
+        {% if image.path contains '.png' %}
+            {% assign pathsplit = image.path | split: "/" %}
+            {% assign length = pathParts.size | minus: 1 %}
+            {% assign filesplit = pathsplit[length] | split: "." %}
+            <!-- ten percent for ten per row?? -->
+            <div style="width: 20%; min-width: 250px; text-align: center; font-size: 90%; margin-left: auto; margin-right: auto;">
+              <!-- <strong>Object Name:</strong> {{ filesplit[0] }}  -->
+              <div> {{ filesplit[0] }} </div>
+              <img src="{{ site.baseurl }}{{ image.path }}" alt="image" width="80%"/>
+            </div>
+        {% endif %}
+      {% endif %}
+  {% endfor %}
+</div>
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+This dataset was developed by Monash University in conjunction with Coles Supermarkets.
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/lachlanchumbley/ColesObjectSet/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+<div float="left" style="display: flex; flex-direction: row; flex-wrap: wrap;">
+  <div style="width: 45%; min-width: 400px; margin-left: auto; margin-right: auto;">
+    <img src="{{ site.baseurl }}/images/logos/Monash_University_logo.png" alt="image" width="80%"/>
+  </div>
+  <div style="width: 45%; min-width: 400px; margin-left: auto; margin-right: auto;">
+    <img src="{{ site.baseurl }}/images/logos/Coles_logo.png" alt="image" width="80%"/>
+  </div>
+</div>
