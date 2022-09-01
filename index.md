@@ -9,7 +9,7 @@ The dataset consists of 3D water-tight mesh models of 50 supermarket objects.
 
 You can download the dataset [**HERE**](https://bridges.monash.edu/articles/dataset/Supermarket_Object_Dataset/20179550).
 
-The object and model set was created to facilitate benchmarking of computer vision and robotics applications. You can find the Robotic Grasping Dataset that uses a subset of this object set [**HERE**](XXXhttps://lachlanchumbley.github.io/MonashGraspingDataset/).
+The object and model set was created to facilitate benchmarking of computer vision and robotics applications. You can find the Robotic Grasping Dataset that uses a subset of this object set [**HERE**](https://lachlanchumbley.github.io/MonashGraspingDataset/).
 
 ## The Objects
 
